@@ -18,7 +18,7 @@ app.use(express.json());
 
 const myurl = require('./routes/urls');
 
-app.use('/api', myurl);
+app.use('/user', myurl);
 
 app.listen(8000, ()=>{
     console.log('server running at 8000');

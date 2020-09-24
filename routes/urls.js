@@ -22,7 +22,7 @@ router.get('/', async (req, res) => {
 
 });
 
-router.post('/', async (req, res) => {
+router.post('/signup', async (req, res) => {
 
     const newData = new data({
         name: req.body.name,
@@ -40,7 +40,7 @@ router.post('/', async (req, res) => {
 
 });
 
-router.get('/:id', async (req, res) => {
+router.get('/getbyid/:id', async (req, res) => {
 
     try {
         const showdata = await data.findById(req.params.id);
@@ -51,7 +51,7 @@ router.get('/:id', async (req, res) => {
 
 });
 
-router.patch('/:id', async (req, res)=>{
+router.patch('/update/:id', async (req, res)=>{
 
     try {
         const updateData = await data.findByIdAndUpdate(req.params.id, {name: req.body.name, surname: req.body.surname, age: req.body.age} );
@@ -64,7 +64,7 @@ router.patch('/:id', async (req, res)=>{
 });
 
 
-router.delete('/:id',  async(req, res)=>{
+router.delete('/delete/:id',  async(req, res)=>{
     
     const ids = req.params.id;
     try {

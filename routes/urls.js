@@ -44,6 +44,7 @@ router.get('/getbyid/:id', async (req, res) => {
 
     try {
         const showdata = await data.findById(req.params.id);
+        
         res.json(showdata);
     } catch (error) {
         res.send("ERROR " + error);
@@ -56,7 +57,8 @@ router.patch('/update/:id', async (req, res)=>{
     try {
         const updateData = await data.findByIdAndUpdate(req.params.id, {name: req.body.name, surname: req.body.surname, age: req.body.age} );
         updateData.save();
-        res.json(updateData);
+        const x = await data.findById(req.params.id);
+        res.json(x);
     } catch (error) {
         res.send("ERROR " + error);
     }

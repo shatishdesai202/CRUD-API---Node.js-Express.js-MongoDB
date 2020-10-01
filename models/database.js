@@ -6,18 +6,16 @@ const dbSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    
     surname: {
         type: String,
         required: true
     },
-    
     age: {
         type: Number,
         required: true,
         default: 20
     }
-
+    
 });
 
 
